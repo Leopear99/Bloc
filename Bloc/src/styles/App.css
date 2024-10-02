@@ -1,0 +1,230 @@
+/* Importar la fuente NotoSans */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+/* Estilos globales */
+body {
+    font-family: 'Noto Sans', sans-serif;
+    color: #000; /* Color del texto en general */
+    margin: 0;
+    padding: 0;
+    background-color: #D2E0FB;
+}
+
+/* Estilos para el contenedor principal */
+.app-container {
+    padding: 20px; /* Padding simétrico */
+    background-color: #ffffff; /* Fondo blanco */
+}
+
+/* Estilos para la AppBar */
+.app-bar {
+    background-color: #FEF9D9; /* Color pastel */
+    border-radius: 8px;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Título de la app */
+.app-bar h1 {
+    font-weight: bold;
+    margin: 0; /* Sin margen */
+}
+
+/* Subtítulo de bienvenida */
+.app-bar h2 {
+    font-weight: 400; /* Regular */
+    margin: 10px 0 0 0; /* Margen superior */
+}
+
+/* Estilo para el botón de Agregar Nota */
+.add-note-button {
+    position: relative; /* Para posicionarlo en el lugar correcto */
+    margin: 20px 0; /* Margen vertical */
+    background-color: #FFB6C1; /* Color pastel */
+    border: none;
+    border-radius: 20px; /* Forma redondeada */
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #fff; /* Color del texto */
+    transition: background-color 0.3s ease; /* Transición suave para hover */
+}
+
+.add-note-button:hover {
+    background-color: #FF69B4; /* Color más oscuro al hacer hover */
+}
+
+/* Estilos para el panel de agregar nota */
+.add-note-panel {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para las notas */
+.note {
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+    position: relative; /* Para permitir el movimiento */
+}
+
+/* Estilos para el título de la nota */
+.note h3 {
+    font-weight: 500; /* w500 */
+    margin: 0; /* Sin margen */
+}
+
+/* Estilo para la descripción de la nota */
+.note p {
+    font-weight: 400; /* w400 */
+}
+
+/* Estilos para el panel de colección */
+.note-collection {
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco */
+}
+
+/* Estilos para el grupo de notas */
+.note-group {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #ffeb3b; /* Color de fondo similar al de una carpeta */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: all 0.3s ease; /* Transición suave */
+    cursor: move; /* Cursor de movimiento */
+}
+
+/* Estilos para el contenedor de las notas en el grupo */
+.note-group h4 {
+    text-align: center;
+}
+
+/* Estilos para el contenedor del panel de notas */
+.note-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Espaciado entre notas */
+}
+
+/* Estilos para el panel de la colección de notas */
+.collection-panel {
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 8px;
+}
+
+/* Estilos para los botones de editar y eliminar */
+.edit-button, .delete-button {
+    border-radius: 20px; /* Forma redondeada */
+    background-color: #FFB6C1; /* Color pastel */
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.edit-button:hover, .delete-button:hover {
+    background-color: #FF69B4; /* Color más oscuro al hacer hover */
+}
+
+.note-container {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f7f7f7;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-height: 100px; /* Altura mínima del contenedor */
+}
+
+.note-container2 {
+    border: 1px solid #ccc; /* Borde de 1px */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #f7f7f7; /* Color de fondo */
+    padding: 5px; /* Espaciado interno */
+    margin: 10px; /* Espaciado externo */
+    display: flex; /* Usar flexbox */
+    flex-direction: column; /* Direccion de las notas en columna */
+    gap: 5px; /* Espaciado entre las notas */
+    min-height: 100px; /* Altura mínima */
+    max-height: 200px; /* Altura máxima */
+    overflow-y: auto; /* Permitir desplazamiento */
+    cursor: move; /* Cambiar el cursor al arrastrar */
+    user-select: none; /* Evitar la selección de texto */
+}
+
+.add-container-button {
+    margin: 10px; /* Espaciado */
+    padding: 10px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color del texto */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+}
+/* Estilos para el modal */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra */
+    padding: 20px;
+    z-index: 1000;
+    width: 90%;
+    max-width: 500px;
+}
+
+/* Fondo oscuro detrás del modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Estilos para los inputs */
+.modal input[type="text"],
+.modal textarea {
+    width: 97%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 4px; /* Bordes redondeados */
+    margin-bottom: 10px; /* Espaciado inferior */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: border-color 0.3s ease; /* Transición suave para el borde */
+}
+
+.modal input[type="text"]:focus,
+.modal textarea:focus {
+    border-color: #66afe9; /* Color del borde en foco */
+    outline: none; /* Quitar el contorno predeterminado */
+}
+
+/* Estilos para los botones */
+.modal button {
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 10px 15px; /* Espaciado interno */
+    margin: 5px;
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: background-color 0.3s ease; /* Transición suave para el fondo */
+}
+
+.modal button:hover {
+    background-color: #45a049; /* Color más oscuro al hacer hover */
+}
